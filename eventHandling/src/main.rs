@@ -107,7 +107,7 @@ fn main() {
 
 		if let Some(p) = e.press_args() {
 			match p {
-				Button::Mouse(b) => if b == mouse::MouseButton::Left { app.draw_button(&mut gl, &mut button2, &ren); } else { println!("Press Left Mouse Button."); },
+				Button::Mouse(b) => if b == mouse::MouseButton::Left { app.draw_button(&mut gl, &mut button2, &ren); } else { println!("Button pressed: {:?}. Please press Left Mouse Button.", b); },
 				Button::Keyboard(k) => println!("Keyboard Button {:?}", k),
 			}
 		}
