@@ -22,6 +22,8 @@ use piston::input:: {
 	Button,
 	mouse,
 };
+
+// Application Button struct
 pub struct AppButton {
 	label: String,
 	width: f64,
@@ -30,6 +32,7 @@ pub struct AppButton {
 	bg: [f32; 4],
 }
 
+// implementing "new" and "set_position" function in AppButton
 impl AppButton {
 	fn new(name: String, w: f64) -> AppButton{
 		AppButton {
@@ -48,10 +51,12 @@ impl AppButton {
 	}
 }
 
+// Application struct
 pub struct App {
 	name: String
 }
 
+// implementing draw_button function of App
 impl App {
 	pub fn draw_button(&mut self, gl: &mut Gl, but: &mut AppButton, args: &RenderArgs) {
 		let context = &Context::abs(args.width as f64, args.height as f64);
@@ -65,6 +70,7 @@ impl App {
 }
 
 fn main() {
+	//	creating a new window
 	let window = Window::new(
 			OpenGL::_3_2,
 			WindowSettings{
@@ -76,7 +82,7 @@ fn main() {
 			},
 		);
 
-
+	// getting window dimension
 	let mut ren = RenderArgs {
 		ext_dt: 0.0,
 		width: 0,
@@ -89,12 +95,17 @@ fn main() {
 	let mut app = App {
 		name: "App Launcher".to_string()
 	};
-	let mut button1 = AppButton::new("Button 1".to_string(), 100.0);
-	button1.set_position(0.0, 0.0);
 
+	// defining a new button (Button 1)
+	let mut button1 = AppButton::new("Button 1".to_string(), 100.0);
+	button1.set_position(0.0, 0.0); // positioning the button
+
+	// defining a new button (Button 2)
 	let mut button2 = AppButton::new("Button 2".to_string(), 100.0);
-	button2.set_position(0.0, 200.0);
-	button2.bg = [1.0, 1.0, 1.0, 1.0];
+	button2.set_position(0.0, 200.0); // positioning the button
+	button2.bg = [1.0, 1.0, 1.0, 1.0]; // setting button background
+
+	// Capturing the window events
 	for e in events(&window) {
 		if let Some(r) = e.render_args() {
 			ren = RenderArgs {
@@ -107,8 +118,8 @@ fn main() {
 
 		if let Some(p) = e.press_args() {
 			match p {
-				Button::Mouse(b) => if b == mouse::MouseButton::Left { app.draw_button(&mut gl, &mut button2, &ren); } else { println!("Button pressed: {:?}. Please press Left Mouse Button.", b); },
-				Button::Keyboard(k) => println!("Keyboard Button {:?}", k),
+				Button::Mouse(b) => if b == mouse::MouseButton::Left { app.draw_button(&mut gl, &mut button2, &ren); } else { println!("Button pressed: {:?}. Please press Left Mouse Button.", b); }, // show button 2 when left mouse button is clicked
+				Button::Keyboard(k) => println!("Keyboard Button {:?}", k), // handling keyboard keys
 			}
 		}
 	}
