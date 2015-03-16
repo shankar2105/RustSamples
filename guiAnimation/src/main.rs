@@ -34,7 +34,7 @@ impl App {
 	fn render(&mut self, _: &mut Window, args: &RenderArgs) {
 		const GREEN:  [f32; 4] = [1.0, 1.0, 1.0, 1.0];
 		const RED:    [f32; 4] = [0.85, 0.147, 0.215, 1.0];
-		
+
 		// Set up a context to draw into.
 		let context = &Context::abs(args.width as f64, args.height as f64);
 

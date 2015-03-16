@@ -1,0 +1,11 @@
+[package]
+
+name = "ciTest"
+version = "0.0.1"
+authors = ["umashankars"]
+
+[lib]
+name = "shCrypto"
+
+[dependencies]
+encoding = "0.2.25"
