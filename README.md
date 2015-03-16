@@ -2,8 +2,7 @@
 
 Windows build status
 
-[![Build
-status](https://ci.appveyor.com/api/projects/status/qveqoe45n56atlk7?svg=true)](https://ci.appveyor.com/project/shankar2105/rustsamples)
+[![Build status](https://ci.appveyor.com/api/projects/status/vt0x2jlx8lg7d9w9?svg=true)](https://ci.appveyor.com/project/shankar2105/rustsamples)
 
 This repository holds the following sample writen in Rust.
 
