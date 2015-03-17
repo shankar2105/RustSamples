@@ -1,6 +1,7 @@
 install:
   - ps: Start-FileDownload 'https://download.libsodium.org/libsodium/releases/libsodium-1.0.2-mingw.tar.gz'
   - cinst 7zip.commandline -x86
+  - 7z x libsodium-1.0.2-mingw.tar.gz -o ./libsodium-1.0.2-mingw -y > nul
   - ls
   
   
