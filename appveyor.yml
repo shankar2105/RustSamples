@@ -4,7 +4,6 @@ install:
   - 7z e libsodium-1.0.2-mingw.tar.gz
   - 7z x libsodium-1.0.2-mingw.tar -olibsodium -y
   - mkdir third_party_libs
-  - cd ..
   - copy libsodium\libsodium-win64\lib\libsodium.a third_party_libs\
   - cd third_party_libs\
   - ls
