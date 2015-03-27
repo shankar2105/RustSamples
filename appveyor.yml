@@ -6,7 +6,7 @@ install:
   - cargo -V
   - cinst 7zip.commandline -x86
   - SET PATH=%PATH%;C:\MinGW\bin;
-  - cd sqlite_test/
+  - cd sqlite_test/ && mkdir bin\i686-pc-windows-gnu
   - ps: Start-FileDownload "https://www.sqlite.org/2015/sqlite-autoconf-3080803.tar.gz"
   - cmd: 7z x sqlite-autoconf-3080803.tar.gz -o.\ && 7z x sqlite-autoconf-3080803.tar -o.\
   - cd sqlite-autoconf-3080803 && gcc -shared -o sqlite3.dll sqlite3.c -Wl,--output-def,sqlite3.def,--out-implib,libsqlite3.a
