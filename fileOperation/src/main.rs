@@ -4,6 +4,7 @@
 #![feature(old_path)]
 use std::old_io::File;
 use std::old_io::stdin;
+use std::path::Path;
 
 static LOREM_IPSUM: &'static str =
 "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
