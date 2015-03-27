@@ -7,6 +7,7 @@ install:
   - SET PATH=%PATH%;C:\Program Files (x86)\Rust\bin
   - rustc -V
   - cargo -V
+  - cinst 7zip.commandline -x86
   - ps: if($true) {
          Start-FileDownload "http://libgd.blob.core.windows.net/mingw/mingw-w64-dgn-x86_64-20141001.7z";
          7z x -oC:\ mingw-w64-dgn-x86_64-20141001.7z;
