@@ -1,0 +1,8 @@
+[package]
+
+name = "sqlite_test"
+version = "0.0.1"
+authors = ["Shankar2105 <shankar21mail@gmail.com>"]
+
+[dependencies.sqlite3]
+git = "https://github.com/linuxfood/rustsqlite.git"
