@@ -21,5 +21,3 @@ install:
 
 test_script:
   - cargo run --verbose
-
-  
