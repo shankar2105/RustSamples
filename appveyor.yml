@@ -7,6 +7,11 @@ install:
   - SET PATH=%PATH%;C:\Program Files (x86)\Rust\bin
   - rustc -V
   - cargo -V
+  - ps: if($true) {
+         Start-FileDownload "http://libgd.blob.core.windows.net/mingw/mingw-w64-dgn-x86_64-20141001.7z";
+         7z x -oC:\ mingw-w64-dgn-x86_64-20141001.7z;
+       	}
+  - SET PATH=%PATH%;C:\mingw64\bin;     	
   - cd sample_test/
   - ps: Start-FileDownload "https://www.sqlite.org/2015/sqlite-autoconf-3080803.tar.gz"
   - cmd: 7z x sqlite-autoconf-3080803.tar.gz -o.\ && 7z x sqlite-autoconf-3080803.tar -o.\
